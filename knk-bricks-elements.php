@@ -16,7 +16,7 @@
  * @package  KNK_Bricks_Elements
  * @author   kanka.dev <mail@kanka.dev>
  * @license  https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0+
- * @version  GIT: 1.0.1
+ * @version  GIT: 1.0.2
  * @link     https://kanka.dev
  */
 
@@ -34,6 +34,7 @@ define('KNK_BRICKS_ELEMENTS_URL', plugin_dir_url(__FILE__));
 // Include required files
 require_once KNK_BRICKS_ELEMENTS_DIR . 'includes/class-github-updater.php';
 require_once KNK_BRICKS_ELEMENTS_DIR . 'includes/class-settings.php';
+require_once KNK_BRICKS_ELEMENTS_DIR . 'includes/dashboard-widget.php';
 
 // Initialize GitHub Updater
 if (class_exists('KNK_Bricks_Elements_GitHub_Updater')) {
