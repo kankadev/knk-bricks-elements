@@ -16,7 +16,7 @@
  * @package  KNK_Bricks_Elements
  * @author   kanka.dev <mail@kanka.dev>
  * @license  https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0+
- * @version  GIT: 1.0.0
+ * @version  GIT: 1.0.1
  * @link     https://kanka.dev
  */
 
