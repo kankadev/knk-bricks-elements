@@ -1,0 +1,9 @@
+.knk-social-media {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .knk-social-icon {
+        height: auto;
+        font-family: var(--fa-style-family-brands);
+    }
+}
