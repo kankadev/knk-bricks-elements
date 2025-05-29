@@ -60,7 +60,8 @@ class KNK_PDF_Embed_Element extends \Bricks\Element
         $this->controls['pdf_file'] = [
             'tab' => 'content',
             'label' => esc_html__("PDF Datei", KNK_BRICKS_ELEMENTS_SLUG),
-            'type' => 'image',
+            'type' => 'file',
+            'fileExtensions' => ['pdf'],
             'description' => esc_html__("Wählen Sie eine PDF-Datei aus der Mediathek aus.", KNK_BRICKS_ELEMENTS_SLUG),
         ];
 
@@ -148,7 +149,7 @@ class KNK_PDF_Embed_Element extends \Bricks\Element
         $toolbar = isset($settings['show_toolbar']) && $settings['show_toolbar'] ? '#toolbar=1' : '#toolbar=0';
         
         // Show download button option
-        $show_download = isset($settings['show_download']) ? $settings['show_download'] : true;
+        $show_download = isset($settings['show_download']) ? $settings['show_download'] : false;
         
         // Get download button text
         $download_text = isset($settings['download_text']) && !empty($settings['download_text']) 
@@ -171,7 +172,7 @@ class KNK_PDF_Embed_Element extends \Bricks\Element
         // Download button
         if ($show_download) {
             echo '<div class="knk-pdf-download-button">';
-            echo '<a href="' . esc_url($pdf_url) . '" download="' . esc_attr($pdf_filename) . '" class="knk-pdf-download">';
+            echo '<a href="' . esc_url($pdf_url) . '" download="' . esc_attr($pdf_filename) . '" class="knk-pdf-download brxe-button bricks-button bricks-background-primary">';
             echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>';
             echo ' ' . $download_text;
             echo '</a>';
