@@ -3,7 +3,7 @@
  * Plugin Name: kanka.dev Bricks Elements
  * Plugin URI: https://github.com/kankadev/knk-bricks-elements
  * Description: Custom Bricks Builder elements by kanka.dev
- * Version: 1.0.6
+ * Version: 1.0.7
  * Author: kanka.dev
  * Author URI: https://kanka.dev
  * Text Domain: knk-bricks-elements
@@ -16,7 +16,7 @@
  * @package  KNK_Bricks_Elements
  * @author   kanka.dev <mail@kanka.dev>
  * @license  https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0+
- * @version  GIT: 1.0.6
+ * @version  GIT: 1.0.7
  * @link     https://kanka.dev
  */
 
@@ -27,7 +27,7 @@ if (!defined('ABSPATH')) {
 
 // Define plugin constants
 define('KNK_BRICKS_ELEMENTS_SLUG', 'knk-bricks-elements');
-define('KNK_BRICKS_ELEMENTS_VERSION', '1.0.6');
+define('KNK_BRICKS_ELEMENTS_VERSION', '1.0.7');
 define('KNK_BRICKS_ELEMENTS_DIR', plugin_dir_path(__FILE__));
 define('KNK_BRICKS_ELEMENTS_URL', plugin_dir_url(__FILE__));
 
