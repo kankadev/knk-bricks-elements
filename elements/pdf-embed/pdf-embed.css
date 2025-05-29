@@ -28,24 +28,7 @@
     text-align: center;
 }
 
-.knk-pdf-download {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 16px;
-    background-color: #f5f5f5;
-    color: #333;
-    text-decoration: none;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    transition: all 0.2s ease;
-}
-
-.knk-pdf-download:hover {
-    background-color: #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.knk-pdf-download svg {
+/* Using standard Bricks button styling */
+.knk-pdf-download i {
     margin-right: 8px;
 }
