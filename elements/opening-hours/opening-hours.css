@@ -1,0 +1,91 @@
+/* 
+ * Opening Hours Element CSS
+ * Responsive grid layout for business hours
+ */
+
+.knk-opening-hours {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.knk-opening-hours-title {
+    margin-bottom: 20px;
+}
+
+.knk-opening-hours-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.knk-opening-hours-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.knk-opening-hours-row:last-child {
+    border-bottom: none;
+}
+
+.knk-opening-hours-row.today {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.knk-opening-hours-day {
+    font-weight: 600;
+}
+
+.knk-opening-hours-times {
+    display: flex;
+    flex-direction: column;
+}
+
+.knk-opening-hours-time-slot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.knk-opening-hours-time-slot:last-child {
+    margin-bottom: 0;
+}
+
+.knk-opening-hours-time {
+    margin-right: 10px;
+}
+
+.knk-opening-hours-note {
+    font-size: 0.9em;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+    .knk-opening-hours-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+    .knk-opening-hours-day {
+        font-weight: 700;
+    }
+    
+    .knk-opening-hours-time-slot {
+        margin-top: 5px;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .knk-opening-hours-row {
+        grid-template-columns: 1fr 2fr;
+    }
+}
