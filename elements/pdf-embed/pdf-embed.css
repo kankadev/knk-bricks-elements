@@ -1,14 +1,51 @@
 .knk-pdf-embed {
-    width: 100%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.knk-pdf-embed object,
-.knk-pdf-embed iframe {
-    display: block;
+.knk-pdf-embed-container {
+    position: relative;
     width: 100%;
-    height: 100%;
+    overflow: hidden;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.knk-pdf-embed-container object,
+.knk-pdf-embed-container iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.knk-pdf-download-button {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.knk-pdf-download {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.knk-pdf-download:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.knk-pdf-download svg {
+    margin-right: 8px;
 }
