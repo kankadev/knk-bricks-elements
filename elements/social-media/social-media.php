@@ -58,7 +58,7 @@ class KNK_Social_Media_Element extends \Bricks\Element
 
     public function enqueue_scripts()
     {
-        wp_enqueue_style('knk-social-media', get_stylesheet_directory_uri() . '/elements/social-media/social-media.css', [], '1.0.0');
+        wp_enqueue_style('knk-social-media', KNK_BRICKS_ELEMENTS_URL . 'elements/social-media/social-media.css', [], KNK_BRICKS_ELEMENTS_VERSION);
     }
 
     public function render()
