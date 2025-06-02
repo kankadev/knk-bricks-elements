@@ -18,7 +18,7 @@ class KNK_Contact_Info_Element extends \Bricks\Element
 
     public function enqueue_scripts()
     {
-        wp_enqueue_style('knk-contact-info', KNK_BRICKS_ELEMENTS_URL . 'elements/contact-info/contact-info.css', [], KNK_BRICKS_ELEMENTS_VERSION);
+        // wp_enqueue_style('knk-contact-info', KNK_BRICKS_ELEMENTS_URL . 'elements/contact-info/contact-info.css', [], KNK_BRICKS_ELEMENTS_VERSION);
     }
 
     public function set_controls()

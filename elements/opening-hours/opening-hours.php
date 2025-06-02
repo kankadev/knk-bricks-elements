@@ -46,7 +46,7 @@ class KNK_Opening_Hours_Element extends \Bricks\Element
      */
     public function enqueue_scripts()
     {
-        wp_enqueue_style('knk-opening-hours', KNK_BRICKS_ELEMENTS_URL . 'elements/opening-hours/opening-hours.css', [], KNK_BRICKS_ELEMENTS_VERSION);
+        // wp_enqueue_style('knk-opening-hours', KNK_BRICKS_ELEMENTS_URL . 'elements/opening-hours/opening-hours.css', [], KNK_BRICKS_ELEMENTS_VERSION);
     }
 
     /**

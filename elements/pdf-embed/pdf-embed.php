@@ -47,7 +47,7 @@ class KNK_PDF_Embed_Element extends \Bricks\Element
      */
     public function enqueue_scripts()
     {
-        wp_enqueue_style('knk-pdf-embed', KNK_BRICKS_ELEMENTS_URL . 'elements/pdf-embed/pdf-embed.css', [], KNK_BRICKS_ELEMENTS_VERSION);
+        //wp_enqueue_style('knk-pdf-embed', KNK_BRICKS_ELEMENTS_URL . 'elements/pdf-embed/pdf-embed.css', [], KNK_BRICKS_ELEMENTS_VERSION);
     }
 
     /**
