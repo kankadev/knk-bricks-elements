@@ -163,7 +163,7 @@ class KNK_PDF_Embed_Element extends \Bricks\Element
         echo '<div class="knk-pdf-embed-container" style="height: ' . esc_attr($height) . ';">';
         
         // Use iframe instead of object to avoid PDF.js rendering issues
-        echo '<iframe src="' . esc_url($pdf_url . $toolbar) . '" width="100%" height="100%" style="border: none;" allowfullscreen>';
+        echo '<iframe src="' . esc_url($pdf_url . $toolbar) . '" width="100%" height="100%" style="border: none;" allowfullscreen title="PDF-Viewer">';
         echo esc_html__("Dieser Browser unterstützt keine eingebetteten PDFs. Bitte laden Sie die PDF-Datei herunter: ", KNK_BRICKS_ELEMENTS_SLUG);
         echo '<a href="' . esc_url($pdf_url) . '">' . esc_html__("PDF herunterladen", KNK_BRICKS_ELEMENTS_SLUG) . '</a>';
         echo '</iframe>';
