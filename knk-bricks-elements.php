@@ -3,7 +3,7 @@
  * Plugin Name: kanka.dev Bricks Elements
  * Plugin URI: https://github.com/kankadev/knk-bricks-elements
  * Description: Custom Bricks Builder elements by kanka.dev
- * Version: 1.0.10
+ * Version: 1.0.11
  * Author: kanka.dev
  * Author URI: https://kanka.dev
  * Text Domain: knk-bricks-elements
@@ -16,7 +16,7 @@
  * @package  KNK_Bricks_Elements
  * @author   kanka.dev <mail@kanka.dev>
  * @license  https://www.gnu.org/licenses/gpl-2.0.html GPL-2.0+
- * @version  GIT: 1.0.10
+ * @version  GIT: 1.0.11
  * @link     https://kanka.dev
  */
 
@@ -27,7 +27,7 @@ if (!defined('ABSPATH')) {
 
 // Define plugin constants
 define('KNK_BRICKS_ELEMENTS_SLUG', 'knk-bricks-elements');
-define('KNK_BRICKS_ELEMENTS_VERSION', '1.0.10');
+define('KNK_BRICKS_ELEMENTS_VERSION', '1.0.11');
 define('KNK_BRICKS_ELEMENTS_DIR', plugin_dir_path(__FILE__));
 define('KNK_BRICKS_ELEMENTS_URL', plugin_dir_url(__FILE__));
 
@@ -80,6 +80,14 @@ function knk_bricks_elements_register()
     if (!knk_bricks_elements_check_dependencies()) {
         return;
     }
+    
+    // Stellen sicher, dass die Bricks\Element Klasse verfügbar ist
+    if (!class_exists('\Bricks\Element')) {
+        error_log('KNK Bricks Elements: Bricks\Element class not found during element registration');
+        return;
+    }
+    
+    require_once KNK_BRICKS_ELEMENTS_DIR . 'includes/class-base-element.php';
 
     $elements_dir = KNK_BRICKS_ELEMENTS_DIR . 'elements/';
     $elements = glob($elements_dir . '*', GLOB_ONLYDIR);
@@ -99,34 +107,7 @@ add_action('init', 'knk_bricks_elements_register', 11);
  * Add text strings to builder
  */
 add_filter('bricks/builder/i18n', function ($i18n) {
-    // For element category 'custom'
-    $i18n['custom'] = esc_html__('Custom', KNK_BRICKS_ELEMENTS_SLUG);
+    // Für die Element-Kategorie 'knk'
+    $i18n['knk'] = esc_html__('kanka.dev', KNK_BRICKS_ELEMENTS_SLUG);
     return $i18n;
 });
-
-/**
- * Enqueue element styles
- *
- * @return void
- */
-function knk_bricks_elements_enqueue_styles()
-{
-    $elements_dir = KNK_BRICKS_ELEMENTS_DIR . 'elements/';
-    $elements = glob($elements_dir . '*', GLOB_ONLYDIR);
-
-    foreach ($elements as $element) {
-        $element_name = basename($element);
-        $css_file = $element . '/' . $element_name . '.css';
-        
-        if (file_exists($css_file)) {
-            wp_enqueue_style(
-                'knk-bricks-element-' . $element_name,
-                KNK_BRICKS_ELEMENTS_URL . 'elements/' . $element_name . '/' . $element_name . '.css',
-                [],
-                KNK_BRICKS_ELEMENTS_VERSION
-            );
-        }
-    }
-}
-add_action('wp_enqueue_scripts', 'knk_bricks_elements_enqueue_styles');
-add_action('admin_enqueue_scripts', 'knk_bricks_elements_enqueue_styles');

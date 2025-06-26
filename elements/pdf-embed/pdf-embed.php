@@ -23,9 +23,8 @@ if (!defined('ABSPATH')) {
  * Provides functionality to embed PDF files from the media library
  * with customizable display options.
  */
-class KNK_PDF_Embed_Element extends \Bricks\Element
+class KNK_PDF_Embed_Element extends KNK_Base_Element
 {
-    public $category = 'general';
     public $name = 'knk-pdf-embed';
     public $icon = 'ti-file';
     public $css_selector = '.knk-pdf-embed';
@@ -40,21 +39,6 @@ class KNK_PDF_Embed_Element extends \Bricks\Element
         return esc_html__("PDF Embed", KNK_BRICKS_ELEMENTS_SLUG);
     }
 
-    /**
-     * Enqueue element styles
-     *
-     * @return void
-     */
-    public function enqueue_scripts()
-    {
-        //wp_enqueue_style('knk-pdf-embed', KNK_BRICKS_ELEMENTS_URL . 'elements/pdf-embed/pdf-embed.css', [], KNK_BRICKS_ELEMENTS_VERSION);
-    }
-
-    /**
-     * Set element controls
-     *
-     * @return void
-     */
     public function set_controls()
     {
         $this->controls['pdf_file'] = [
@@ -113,11 +97,6 @@ class KNK_PDF_Embed_Element extends \Bricks\Element
         ];
     }
 
-    /**
-     * Render element HTML
-     *
-     * @return void
-     */
     public function render()
     {
         $settings = $this->settings;

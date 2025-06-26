@@ -4,9 +4,9 @@ if (!defined('ABSPATH')) {
     exit();
 }
 
-class KNK_Social_Media_Element extends \Bricks\Element
+class KNK_Social_Media_Element extends KNK_Base_Element
 {
-    public $category = 'general';
+    //public $category = 'knk';
     public $name = 'knk-social-media';
     public $icon = 'ti-facebook';
     public $css_selector = '.knk-social-media';
@@ -54,11 +54,6 @@ class KNK_Social_Media_Element extends \Bricks\Element
                 'rgb' => 'rgba(60, 231, 123, 0.9)',
             ],
         ];
-    }
-
-    public function enqueue_scripts()
-    {
-        // wp_enqueue_style('knk-social-media', KNK_BRICKS_ELEMENTS_URL . 'elements/social-media/social-media.css', [], KNK_BRICKS_ELEMENTS_VERSION);
     }
 
     public function render()

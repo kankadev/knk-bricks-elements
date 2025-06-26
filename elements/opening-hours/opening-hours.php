@@ -22,9 +22,8 @@ if (!defined('ABSPATH')) {
  *
  * Provides functionality to display business/opening hours in a responsive layout
  */
-class KNK_Opening_Hours_Element extends \Bricks\Element
+class KNK_Opening_Hours_Element extends KNK_Base_Element
 {
-    public $category = 'general';
     public $name = 'knk-opening-hours';
     public $icon = 'ti-time';
     public $css_selector = '.knk-opening-hours';
@@ -39,15 +38,6 @@ class KNK_Opening_Hours_Element extends \Bricks\Element
         return esc_html__("Öffnungszeiten", KNK_BRICKS_ELEMENTS_SLUG);
     }
 
-    /**
-     * Enqueue element styles
-     *
-     * @return void
-     */
-    public function enqueue_scripts()
-    {
-        // wp_enqueue_style('knk-opening-hours', KNK_BRICKS_ELEMENTS_URL . 'elements/opening-hours/opening-hours.css', [], KNK_BRICKS_ELEMENTS_VERSION);
-    }
 
     /**
      * Set element controls
