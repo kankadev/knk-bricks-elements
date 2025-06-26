@@ -4,9 +4,8 @@ if (!defined('ABSPATH')) {
     exit();
 }
 
-class KNK_Contact_Info_Element extends \Bricks\Element
+class KNK_Contact_Info_Element extends KNK_Base_Element
 {
-    public $category = 'general';
     public $name = 'knk-contact-info';
     public $icon = 'ti-info-alt';
     public $css_selector = '.knk-contact-info';
@@ -14,11 +13,6 @@ class KNK_Contact_Info_Element extends \Bricks\Element
     public function get_label()
     {
         return esc_html__('Kontaktinformation', 'bricks');
-    }
-
-    public function enqueue_scripts()
-    {
-        // wp_enqueue_style('knk-contact-info', KNK_BRICKS_ELEMENTS_URL . 'elements/contact-info/contact-info.css', [], KNK_BRICKS_ELEMENTS_VERSION);
     }
 
     public function set_controls()
@@ -99,7 +93,6 @@ class KNK_Contact_Info_Element extends \Bricks\Element
                     break;
             }
         }
-
 
 
         echo isset($options[$info_type]) ? ($info_type === 'knk_address' ? nl2br(esc_html($options[$info_type])) : esc_html($options[$info_type])) : '';
