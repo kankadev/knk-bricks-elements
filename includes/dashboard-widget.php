@@ -38,7 +38,7 @@ add_action('wp_dashboard_setup', 'knk_bricks_elements_add_dashboard_widget');
 function knk_bricks_elements_dashboard_info() {
     echo '<div class="knk-dashboard-widget">';
     echo '<a href="https://kanka.dev" title="kanka.dev" target="_blank">'
-        . '<img src="' . get_stylesheet_directory_uri() . '/assets/img/kanka.dev_logo.svg" alt="kanka.dev Logo" class="knk-logo"></a>';
+        . '<img src="' . KNK_BRICKS_ELEMENTS_URL . '/assets/img/kanka.dev_logo.svg" alt="kanka.dev Logo" class="knk-logo"></a>';
     echo '<ul>
         <li><strong>Entwickelt von:</strong> <a href="https://kanka.dev" target="_blank">kanka.dev</a></li>
         <li><strong>E-Mail:</strong> <a href="mailto:mail@kanka.dev">mail@kanka.dev</a></li>
