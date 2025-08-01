@@ -21,11 +21,16 @@ if (!defined('ABSPATH')) {
  * @return void
  */
 function knk_bricks_elements_add_dashboard_widget() {
-    wp_add_dashboard_widget(
-        'knk_bricks_elements_dashboard_widget',
-        'Designer & Developer Info',
-        'knk_bricks_elements_dashboard_info'
-    );
+    // Check if widget should be hidden
+    $hide_widget = get_option('knk_bricks_elements_hide_widget', false);
+    
+    if (!$hide_widget) {
+        wp_add_dashboard_widget(
+            'knk_bricks_elements_dashboard_widget',
+            'Designer & Developer Info',
+            'knk_bricks_elements_dashboard_info'
+        );
+    }
 }
 
 add_action('wp_dashboard_setup', 'knk_bricks_elements_add_dashboard_widget');
