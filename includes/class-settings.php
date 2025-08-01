@@ -49,13 +49,30 @@ class KNK_Bricks_Elements_Settings {
      * @return void
      */
     public function register_settings() {
-        // Hier können in Zukunft Plugin-Einstellungen registriert werden
+        // Register the hide widget setting
+        register_setting(
+            KNK_BRICKS_ELEMENTS_SLUG . '-settings-group',
+            'knk_bricks_elements_hide_widget',
+            array(
+                'type' => 'boolean',
+                'default' => false,
+                'sanitize_callback' => 'rest_sanitize_boolean'
+            )
+        );
         
         add_settings_section(
             'general_section',
             __('General Settings', KNK_BRICKS_ELEMENTS_SLUG),
             array($this, 'render_general_section'),
             KNK_BRICKS_ELEMENTS_SLUG . '-settings'
+        );
+        
+        add_settings_field(
+            'knk_bricks_elements_hide_widget',
+            __('Hide Dashboard Widget', KNK_BRICKS_ELEMENTS_SLUG),
+            array($this, 'render_hide_widget_field'),
+            KNK_BRICKS_ELEMENTS_SLUG . '-settings',
+            'general_section'
         );
     }
 
@@ -66,6 +83,25 @@ class KNK_Bricks_Elements_Settings {
      */
     public function render_general_section() {
         echo '<p>' . esc_html__('General settings for the plugin.', KNK_BRICKS_ELEMENTS_SLUG) . '</p>';
+    }
+
+    /**
+     * Render hide widget field
+     *
+     * @return void
+     */
+    public function render_hide_widget_field() {
+        $hide_widget = get_option('knk_bricks_elements_hide_widget', false);
+        ?>
+        <input type="checkbox" 
+               id="knk_bricks_elements_hide_widget" 
+               name="knk_bricks_elements_hide_widget" 
+               value="1" 
+               <?php checked($hide_widget, true); ?> />
+        <label for="knk_bricks_elements_hide_widget">
+            <?php esc_html_e('Hide the developer info widget from the dashboard', KNK_BRICKS_ELEMENTS_SLUG); ?>
+        </label>
+        <?php
     }
 
     /**
