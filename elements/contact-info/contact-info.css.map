@@ -1,9 +1,1 @@
-{
-	"version": 3,
-	"file": "contact-info.css",
-	"sources": [
-		"contact-info.scss"
-	],
-	"names": [],
-	"mappings": "AAAA,AACI,iBADa,CACb,CAAC,AAAC,CACE,YAAY,CAAE,MAAM,CACvB"
-}
+{"version":3,"sources":["contact-info.scss","contact-info.css"],"names":[],"mappings":"AACI;EACI,oBAAA;ACAR","file":"contact-info.css"}

@@ -1,2 +1,8 @@
-.knk-social-media{display:flex;flex-wrap:nowrap}.knk-social-media .knk-social-icon{height:auto;font-family:var(--fa-style-family-brands)}
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNvY2lhbC1tZWRpYS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGtCQUNJLFlBQWEsQ0FDYixnQkFBaUIsQ0FGckIsbUNBS1EsV0FBWSxDQUNaLHlDQUEwQyIsImZpbGUiOiJzb2NpYWwtbWVkaWEuY3NzIn0= */
+.knk-social-media {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.knk-social-media .knk-social-icon {
+  height: auto;
+  font-family: var(--fa-style-family-brands);
+}/*# sourceMappingURL=social-media.css.map */
