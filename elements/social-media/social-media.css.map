@@ -1,9 +1,1 @@
-{
-	"version": 3,
-	"file": "social-media.css",
-	"sources": [
-		"social-media.scss"
-	],
-	"names": [],
-	"mappings": "AAAA,AAAA,iBAAiB,AAAC,CACd,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,MAAM,CAMpB,AARD,AAII,iBAJa,CAIb,gBAAgB,AAAC,CACb,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,6BAA6B,CAC7C"
-}
+{"version":3,"sources":["social-media.scss","social-media.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,iBAAA;ACCJ;ADCI;EACI,YAAA;EACA,0CAAA;ACCR","file":"social-media.css"}

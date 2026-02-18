@@ -40,8 +40,8 @@ require_once KNK_BRICKS_ELEMENTS_DIR . 'includes/dashboard-widget.php';
 if (class_exists('KNK_Bricks_Elements_GitHub_Updater')) {
     new KNK_Bricks_Elements_GitHub_Updater(
         __FILE__,
-        'kankadev', // Replace with your GitHub username
-        KNK_BRICKS_ELEMENTS_SLUG // GitHub repo name
+        'kankadev',
+        KNK_BRICKS_ELEMENTS_SLUG
     );
 }
 
@@ -60,12 +60,24 @@ function knk_bricks_elements_check_dependencies()
 }
 
 /**
+ * Load plugin text domain
+ */
+function knk_bricks_elements_load_textdomain() {
+    load_plugin_textdomain(
+        KNK_BRICKS_ELEMENTS_SLUG,
+        false,
+        dirname(KNK_BRICKS_ELEMENTS_SLUG) . '/languages'
+    );
+}
+add_action('init', 'knk_bricks_elements_load_textdomain');
+
+/**
  * Admin notice if Bricks is not active
  */
 function knk_bricks_elements_admin_notice() {
     ?>
     <div class="notice notice-error">
-        <p><?php _e('kanka.dev Bricks Elements requires the Bricks Builder plugin to be installed and activated.', KNK_BRICKS_ELEMENTS_SLUG); ?></p>
+        <p><?php echo esc_html__('kanka.dev Bricks Elements requires the Bricks Builder plugin to be installed and activated.', KNK_BRICKS_ELEMENTS_SLUG); ?></p>
     </div>
     <?php
 }
