@@ -37,7 +37,8 @@ class KNK_Bricks_Elements_GitHub_Updater {
         add_filter('plugins_api', array($this, 'plugin_popup'), 10, 3);
         add_filter('upgrader_post_install', array($this, 'after_install'), 10, 3);
         
-        $this->plugin_data = get_plugin_data($this->plugin_file);
+        // Read raw headers during bootstrap; translating here runs before init.
+        $this->plugin_data = get_plugin_data($this->plugin_file, false, false);
         $this->slug = plugin_basename($this->plugin_file);
     }
 
